@@ -1,14 +1,19 @@
 import numpy as np
+from random import radint
 
-M = 5
-N = 4
+M = 4
+N = 5
 
-A = np.zeros((M, N))
+a = np.zeros((M, N), dtype=int)
 
-for m in range(M):
-  for n in range(N):
-    s = np.sin(N * (n + 1) + M + (m + 1))
-    if s > 0:
-      A[m, n] = s
+for i in range(M):
+  for j in range(N):
+     a[i, j] = randint(0, 100)
 
-print(A)
+print()
+print(a)
+print()
+
+
+a[:, [2, 3]] = a[:, [3, 2]]
+print(a)
